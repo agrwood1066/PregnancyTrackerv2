@@ -1,0 +1,576 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid202\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs40 \cf0 Pregnancy Tracker Web App Specification\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs32 \cf0 Core Requirements\
+Overview\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 Build a responsive web application to track pregnancy-related information including shopping lists, appointments, baby names, and hospital bag items. Key changes from original spec: Use Replit native authentication instead of Supabase auth, while still using Supabase for database storage and Google Sheets for data backup.\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Tech Stack\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f2\b0\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 Frontend: React with Next.js, TypeScript\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 State Management: Redux Toolkit\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 UI Components: Material-UI or Chakra UI\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Authentication: Supabase\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Database: Supabase\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Data Backup: Google Sheets API\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Additional Features: PWA capabilities, offline support\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 API Requirements\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f2\b0\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 Supabase Project URL and API key (for database)\
+\ls2\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Google API credentials with Sheets and Calendar access\
+\ls2\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 GitHub repository connection for version control\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Priority Task List\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0
+\f1\b0\fs26 \cf0 {\listtext	0.	}Project setup and repository configuration\
+{\listtext	0.	}Authentication system implementation (Replit)\
+{\listtext	0.	}Database schema creation in Supabase\
+{\listtext	0.	}API routes for data operations\
+{\listtext	0.	}Redux store and core state management\
+{\listtext	0.	}Basic UI components and navigation\
+{\listtext	0.	}Feature-by-feature implementation in this order:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl1
+\f2\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 Shopping List\
+\ls3\ilvl1
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Appointments\
+\ls3\ilvl1
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Baby Names\
+\ls3\ilvl1
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Hospital Bag\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	0.	}Partner sharing functionality\
+{\listtext	0.	}Google Sheets backup integration\
+{\listtext	0.	}Offline support and PWA capabilities\
+{\listtext	0.	}Testing and refinement\
+{\listtext	0.	}Deployment pipeline configuration\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Database Schema\
+Users Table\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 CREATE TABLE users (\
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),\
+  supabase_id TEXT UNIQUE NOT NULL,\
+  email TEXT UNIQUE NOT NULL,\
+  display_name TEXT,\
+  household_id UUID,\
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()\
+);\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Shopping Lists Table\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 CREATE TABLE shopping_lists (\
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),\
+  user_id UUID REFERENCES users(id) NOT NULL,\
+  item_name TEXT NOT NULL,\
+  price DECIMAL(10,2),\
+  price_source TEXT,\
+  is_starred BOOLEAN DEFAULT FALSE,\
+  is_purchased BOOLEAN DEFAULT FALSE,\
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()\
+);\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Appointments Table\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 CREATE TABLE appointments (\
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),\
+  user_id UUID REFERENCES users(id) NOT NULL,\
+  title TEXT NOT NULL,\
+  date_time TIMESTAMP WITH TIME ZONE NOT NULL,\
+  location TEXT,\
+  notes TEXT,\
+  google_calendar_id TEXT,\
+  reminder_enabled BOOLEAN DEFAULT FALSE,\
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()\
+);\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Baby Names Table\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 CREATE TABLE baby_names (\
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),\
+  user_id UUID REFERENCES users(id) NOT NULL,\
+  name TEXT NOT NULL,\
+  gender TEXT CHECK (gender IN ('boy', 'girl', 'neutral')),\
+  ranking INTEGER CHECK (ranking BETWEEN 1 AND 5),\
+  notes TEXT,\
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()\
+);\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Hospital Bag Items Table\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 CREATE TABLE hospital_bag_items (\
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),\
+  user_id UUID REFERENCES users(id) NOT NULL,\
+  item_name TEXT NOT NULL,\
+  category TEXT NOT NULL,\
+  is_packed BOOLEAN DEFAULT FALSE,\
+  notes TEXT,\
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()\
+);\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Implementation Plan\
+1. Project Setup\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 # Initialize Next.js project with TypeScript\
+npx create-next-app@latest pregnancy-tracker --typescript\
+cd pregnancy-tracker\
+\
+# Install dependencies\
+npm install @supabase/supabase-js @reduxjs/toolkit react-redux\
+npm install googleapis google-auth-library\
+npm install @mui/material @emotion/react @emotion/styled\
+# OR\
+npm install @chakra-ui/react @emotion/react @emotion/styled @chakra-ui/next-js\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 2. Environment Configuration\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 Create a .env.local file:\
+# Supabase Configuration\
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url\
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key\
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key\
+\
+# Google API Configuration\
+GOOGLE_CLIENT_ID=your_google_client_id\
+GOOGLE_CLIENT_SECRET=your_google_client_secret\
+GOOGLE_REDIRECT_URI=your_redirect_uri\
+\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 3. Authentication Implementation\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 // pages/api/auth/[...nextauth].js\
+import NextAuth from 'next-auth';\
+import SupabaseAuth from 'next-auth/providers/supabaseauth\'92;\
+import \{ createClient \} from '@supabase/supabase-js';\
+\
+// Initialize Supabase client\
+const supabase = createClient(\
+  process.env.NEXT_PUBLIC_SUPABASE_URL,\
+  process.env.SUPABASE_SERVICE_ROLE_KEY\
+);\
+\
+export default NextAuth(\{\
+  providers: [\
+    ReplitProvider(\{\
+      clientId: process.env.REPLIT_CLIENT_ID,\
+      clientSecret: process.env.REPLIT_CLIENT_SECRET,\
+    \}),\
+  ],\
+  callbacks: \{\
+    async signIn(\{ user, account \}) \{\
+      if (!user.email) return false;\
+      \
+      // Check if user exists in Supabase\
+      const \{ data, error \} = await supabase\
+        .from('users')\
+        .select('*')\
+        .eq('replit_id', user.id)\
+        .single();\
+      \
+      // If user doesn't exist, create them\
+      if (error && error.code === 'PGRST116') \{\
+        const \{ data: newUser, error: createError \} = await supabase\
+          .from('users')\
+          .insert(\{\
+            replit_id: user.id,\
+            email: user.email,\
+            display_name: user.name || user.email.split('@')[0],\
+          \})\
+          .single();\
+          \
+        if (createError) return false;\
+      \}\
+      \
+      return true;\
+    \},\
+    async session(\{ session, token \}) \{\
+      // Add Supabase user data to session\
+      if (session?.user) \{\
+        const \{ data: userData \} = await supabase\
+          .from('users')\
+          .select('*')\
+          .eq('replit_id', token.sub)\
+          .single();\
+          \
+        if (userData) \{\
+          session.user.id = userData.id;\
+          session.user.household_id = userData.household_id;\
+        \}\
+      \}\
+      return session;\
+    \},\
+  \},\
+\});\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 4. Database Service Setup\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 // services/supabaseService.ts\
+import \{ createClient \} from '@supabase/supabase-js';\
+\
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;\
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;\
+\
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);\
+\
+// Example shopping list service\
+export const ShoppingListService = \{\
+  async getItems(userId: string) \{\
+    const \{ data, error \} = await supabase\
+      .from('shopping_lists')\
+      .select('*')\
+      .eq('user_id', userId)\
+      .order('created_at', \{ ascending: false \});\
+      \
+    if (error) throw error;\
+    return data;\
+  \},\
+  \
+  async addItem(userId: string, item: \{ item_name: string, price?: number, price_source?: string, is_starred?: boolean \}) \{\
+    const \{ data, error \} = await supabase\
+      .from('shopping_lists')\
+      .insert(\{\
+        user_id: userId,\
+        ...item\
+      \})\
+      .single();\
+      \
+    if (error) throw error;\
+    return data;\
+  \},\
+  \
+  // Additional methods for update, delete, etc.\
+\};\
+\
+// Implement similar services for appointments, baby names, and hospital bag\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 5. Google Sheets Backup Implementation\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 // services/googleSheetsService.ts\
+import \{ google \} from 'googleapis';\
+import \{ OAuth2Client \} from 'google-auth-library';\
+\
+// Initialize OAuth2 client\
+const oauth2Client = new OAuth2Client(\
+  process.env.GOOGLE_CLIENT_ID,\
+  process.env.GOOGLE_CLIENT_SECRET,\
+  process.env.GOOGLE_REDIRECT_URI\
+);\
+\
+// Set credentials (tokens would be stored in database or session)\
+export const setCredentials = (tokens: any) => \{\
+  oauth2Client.setCredentials(tokens);\
+\};\
+\
+export const GoogleSheetsService = \{\
+  async backupData(userId: string, data: any) \{\
+    const sheets = google.sheets(\{ version: 'v4', auth: oauth2Client \});\
+    \
+    // Example: backup shopping list to a sheet\
+    const response = await sheets.spreadsheets.values.update(\{\
+      spreadsheetId: 'YOUR_SPREADSHEET_ID',\
+      range: 'ShoppingList!A1',\
+      valueInputOption: 'RAW',\
+      requestBody: \{\
+        values: [\
+          ['Item Name', 'Price', 'Price Source', 'Starred', 'Purchased', 'Created At'],\
+          ...data.map((item: any) => [\
+            item.item_name,\
+            item.price,\
+            item.price_source,\
+            item.is_starred ? 'Yes' : 'No',\
+            item.is_purchased ? 'Yes' : 'No',\
+            new Date(item.created_at).toLocaleString()\
+          ])\
+        ]\
+      \}\
+    \});\
+    \
+    return response.data;\
+  \},\
+  \
+  // Additional methods for other data types\
+\};\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 6. Redux Store Configuration\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 // store/index.ts\
+import \{ configureStore \} from '@reduxjs/toolkit';\
+import shoppingListReducer from './slices/shoppingListSlice';\
+import appointmentsReducer from './slices/appointmentsSlice';\
+import babyNamesReducer from './slices/babyNamesSlice';\
+import hospitalBagReducer from './slices/hospitalBagSlice';\
+\
+export const store = configureStore(\{\
+  reducer: \{\
+    shoppingList: shoppingListReducer,\
+    appointments: appointmentsReducer,\
+    babyNames: babyNamesReducer,\
+    hospitalBag: hospitalBagReducer,\
+  \},\
+\});\
+\
+export type RootState = ReturnType<typeof store.getState>;\
+export type AppDispatch = typeof store.dispatch;\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Feature Implementation Guidelines\
+Shopping List\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\f2\b0\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 CRUD operations for items\
+\ls4\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Price tracking with multiple sources\
+\ls4\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Star/highlight important items\
+\ls4\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Filter by purchased/unpurchased\
+\ls4\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Sort by price, name, or date added\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Appointments\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls5\ilvl0
+\f2\b0\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 Calendar view with reminders\
+\ls5\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Google Calendar sync\
+\ls5\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Detail view with notes\
+\ls5\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Upcoming appointment summary\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Baby Names\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls6\ilvl0
+\f2\b0\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 Add names with gender classification\
+\ls6\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Rating system (1-5 stars)\
+\ls6\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Sorting and filtering options\
+\ls6\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Notes for each name\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Hospital Bag Checklist\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls7\ilvl0
+\f2\b0\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 Categorized items (essentials, clothes, documents, etc.)\
+\ls7\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Packing status tracking\
+\ls7\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Progress indicators by category\
+\ls7\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f1\fs26 Essential vs. nice-to-have distinction\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Partner Sharing Implementation\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 // pages/api/household/invite.ts\
+import \{ supabase \} from '../../../services/supabaseService';\
+\
+export default async function handler(req, res) \{\
+  const \{ userId, partnerEmail \} = req.body;\
+  \
+  // Create or get household ID\
+  const \{ data: userData, error: userError \} = await supabase\
+    .from('users')\
+    .select('household_id')\
+    .eq('id', userId)\
+    .single();\
+    \
+  let householdId = userData?.household_id;\
+  \
+  if (!householdId) \{\
+    // Create new household\
+    const \{ data: household, error: householdError \} = await supabase\
+      .rpc('create_household', \{ user_id: userId \});\
+      \
+    if (householdError) return res.status(500).json(\{ error: householdError.message \});\
+    householdId = household;\
+  \}\
+  \
+  // Check if partner exists\
+  const \{ data: partnerData, error: partnerError \} = await supabase\
+    .from('users')\
+    .select('id')\
+    .eq('email', partnerEmail)\
+    .single();\
+    \
+  if (partnerError && partnerError.code !== 'PGRST116') \{\
+    return res.status(500).json(\{ error: partnerError.message \});\
+  \}\
+  \
+  if (partnerData) \{\
+    // Update partner's household\
+    const \{ error: updateError \} = await supabase\
+      .from('users')\
+      .update(\{ household_id: householdId \})\
+      .eq('id', partnerData.id);\
+      \
+    if (updateError) return res.status(500).json(\{ error: updateError.message \});\
+    \
+    return res.status(200).json(\{ success: true \});\
+  \} else \{\
+    // Send invitation email (implementation needed)\
+    // ...\
+    \
+    return res.status(200).json(\{ success: true, message: 'Invitation sent' \});\
+  \}\
+\}\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs32 \cf0 Offline Support Implementation\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs26 \cf0 // In Next.js app, create a service worker\
+// public/service-worker.js\
+\
+const CACHE_NAME = 'pregnancy-tracker-cache-v1';\
+const urlsToCache = [\
+  '/',\
+  '/shopping-list',\
+  '/appointments',\
+  '/baby-names',\
+  '/hospital-bag',\
+  '/static/...' // Include all static assets\
+];\
+\
+self.addEventListener('install', (event) => \{\
+  event.waitUntil(\
+    caches.open(CACHE_NAME)\
+      .then((cache) => cache.addAll(urlsToCache))\
+  );\
+\});\
+\
+self.addEventListener('fetch', (event) => \{\
+  event.respondWith(\
+    caches.match(event.request)\
+      .then((response) => \{\
+        if (response) return response;\
+        \
+        return fetch(event.request).then((response) => \{\
+          if (!response || response.status !== 200 || response.type !== 'basic') \{\
+            return response;\
+          \}\
+          \
+          const responseToCache = response.clone();\
+          caches.open(CACHE_NAME).then((cache) => \{\
+            cache.put(event.request, responseToCache);\
+          \});\
+          \
+          return response;\
+        \});\
+      \})\
+  );\
+\});\
+\
+// Sync offline changes when back online\
+self.addEventListener('sync', (event) => \{\
+  if (event.tag =\uc0\u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 \u56258 \u57271 == 'sync-data') \{\
+    event.waitUntil(syncData());\
+  \}\
+\});\
+\
+async function syncData() \{\
+  // Implementation to sync IndexedDB with server\
+\}\
+}
