@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node scripts/run-tests.js",
+    "test:supabase": "node scripts/test-supabase-connection.js",
+    "test:shopping": "node scripts/test-shopping-feature.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",

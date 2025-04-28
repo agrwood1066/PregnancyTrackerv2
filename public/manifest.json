@@ -1,0 +1,35 @@
+{
+  "name": "Pregnancy Tracker",
+  "short_name": "PregnancyTracker",
+  "description": "Track your pregnancy journey with this comprehensive app",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "categories": ["health", "lifestyle", "productivity"],
+  "screenshots": [
+    {
+      "src": "/screenshots/shopping-list.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/appointments.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+} 

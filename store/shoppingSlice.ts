@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { supabase } from '@/lib/supabase'
 import { ShoppingItem } from '@/lib/supabase'
+import { validateShoppingItem } from '@/lib/validation'
 
 interface ShoppingState {
   items: ShoppingItem[]
@@ -35,6 +36,12 @@ export const addItem = createAsyncThunk(
   'shopping/addItem',
   async (name: string, { rejectWithValue }) => {
     try {
+      // Validate the item
+      const validation = validateShoppingItem({ name });
+      if (!validation.isValid) {
+        return rejectWithValue(validation.errors.join(', '));
+      }
+      
       const { data, error } = await supabase
         .from('shopping_items')
         .insert([{ name, completed: false }])
@@ -70,6 +77,12 @@ export const toggleItem = createAsyncThunk(
   'shopping/toggleItem',
   async ({ id, completed }: { id: string; completed: boolean }, { rejectWithValue }) => {
     try {
+      // Validate the update
+      const validation = validateShoppingItem({ completed });
+      if (!validation.isValid) {
+        return rejectWithValue(validation.errors.join(', '));
+      }
+      
       const { data, error } = await supabase
         .from('shopping_items')
         .update({ completed })
