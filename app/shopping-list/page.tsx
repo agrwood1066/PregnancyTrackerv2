@@ -1,11 +1,12 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Container, VStack, Heading, Button, useDisclosure } from '@chakra-ui/react'
+import { Container, VStack, Heading, Button, useDisclosure, Divider } from '@chakra-ui/react'
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { setItems, setLoading, setError } from '@/lib/features/shopping/shoppingSlice'
 import ShoppingList from '@/components/shopping/ShoppingList'
 import AddItemModal from '@/components/shopping/AddItemModal'
+import GoogleSheetsBackup from '@/components/backup/GoogleSheetsBackup'
 import { supabase } from '@/lib/supabase'
 import { useAuth } from '@/lib/auth'
 
@@ -47,6 +48,10 @@ export default function ShoppingListPage() {
         </Button>
         <ShoppingList items={items} loading={loading} error={error} />
         <AddItemModal isOpen={isOpen} onClose={onClose} />
+        
+        <Divider my={4} />
+        
+        <GoogleSheetsBackup />
       </VStack>
     </Container>
   )
