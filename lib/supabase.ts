@@ -44,16 +44,14 @@ export type ShoppingList = {
   updated_at: string;
 };
 
-export type ShoppingItem = {
+export interface ShoppingItem {
   id: string;
-  shopping_list_id: string;
   name: string;
-  status: 'pending' | 'purchased' | 'not_needed';
-  notes: string | null;
-  created_by: string;
+  completed: boolean;
   created_at: string;
   updated_at: string;
-};
+  user_id: string;
+}
 
 export type Appointment = {
   id: string;

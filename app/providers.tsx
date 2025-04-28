@@ -5,15 +5,20 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
 import { AuthProvider } from '@/lib/auth'
+import StoreProvider from './StoreProvider'
+import Navbar from '@/components/navigation/Navbar'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <Provider store={store}>
+    <StoreProvider>
       <AuthProvider>
         <CacheProvider>
-          <ChakraProvider>{children}</ChakraProvider>
+          <ChakraProvider>
+            <Navbar />
+            {children}
+          </ChakraProvider>
         </CacheProvider>
       </AuthProvider>
-    </Provider>
+    </StoreProvider>
   )
 } 
